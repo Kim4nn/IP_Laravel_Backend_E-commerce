@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -21,5 +23,5 @@ Route::controller(ProductController::class)->prefix('products')->group(function 
     Route::get('/{productId}', 'getProduct');
     Route::put('/{productId}', 'updateProduct');
     Route::delete('/{productId}', 'deleteProduct');
-    Route::get('/categories/{categoryId}/products', 'getProductsByCategory');
+    Route::get('/categories/{categoryId}/products', 'getProductsByCategoryId');
 });
