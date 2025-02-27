@@ -30,9 +30,4 @@ class ProductController extends Controller
     public function deleteProduct($categoryId) {
         return ["message" => "Deleting 1 product based on given productId"];
     }
-
-    // ---Get /api/categories/{categoryId}/products
-    public function getProductsByCategoryId($categoryId) {
-        return ["message" => "Getting all products belong to categoryId"];
-    }
 }
