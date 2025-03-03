@@ -1,9 +1,14 @@
-version: '3.8'
+version: "3.8"
 services:
   app:
     image: php:8.2-fpm
     container_name: laravel_app
     working_dir: /var/www
+    command: >
+      sh -c "
+      docker-php-ext-install pdo pdo_mysql &&
+      php-fpm
+      "
     volumes:
       - ./laravel:/var/www
       - ./php.ini:/usr/local/etc/php/php.ini
