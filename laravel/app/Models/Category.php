@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+    use SoftDeletes; // Enable soft deletes
     use HasFactory;
 
+    protected $dates = ['deleted_at']; // Ensure that deleted_at is treated as a date
     protected $fillable = ['name'];
 
     public function products()
