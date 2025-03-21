@@ -25,7 +25,7 @@ class Payment extends Model
         return $this->belongsTo(Order::class);
     }
 
-    protected function payment_date(): Attribute
+    protected function paymentDate(): Attribute
     {
         return Atribute::make(
             // Mutator: Convert input format to MySQL format before saving
@@ -33,6 +33,6 @@ class Payment extends Model
 
             // Accessor: Convert database format to user format when retrieving
             get: fn ($value) => Carbon::parse($value)->format('d/m/Y H:i:s')
-        )
+        );
     }
 }

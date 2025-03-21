@@ -12,7 +12,7 @@ class Product extends Model
     use hasFactory;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['category_id', 'pricing', 'description'];
+    protected $fillable = ['name', 'category_id', 'pricing', 'description'];
 
     public function category()
     {

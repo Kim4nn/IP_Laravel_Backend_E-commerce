@@ -13,7 +13,7 @@ class Order extends Model
 
     protected $dates = ['deleted_at'];
     protected $table = 'orders';
-    protected $fillable = ['order_date', 'total_price'];
+    protected $fillable = ['order_date', 'total_price', 'customer_id'];
 
     public function payments()
     {
@@ -30,9 +30,9 @@ class Order extends Model
         return $this->hasMany(OrderProduct::class);
     }
 
-    protected function order_date(): Attribute
+    protected function orderDate(): Attribute
     {
-        return Attribute::Make(
+        return Attribute::make(
             // Mutator: Convert input format to MySQL format before saving
             set: fn ($value) => Carbon::createFromFormat('d/m/Y H:i:s', $value)->format('Y-m-d H:i:s'),
 

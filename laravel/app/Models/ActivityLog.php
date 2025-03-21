@@ -10,4 +10,5 @@ class ActivityLog extends Model
     protected $casts = [
         'changes' => 'array', // Ensure that changes are stored as JSON
     ];
+    public $timestamps = false;
 }

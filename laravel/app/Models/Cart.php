@@ -10,7 +10,7 @@ class Cart extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['quantity'];
+    protected $fillable = ['quantity', 'product_id', 'customer_id'];
 
     public function product()
     {
