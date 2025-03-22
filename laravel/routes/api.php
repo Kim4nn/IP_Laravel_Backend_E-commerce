@@ -18,7 +18,7 @@ Route::get('/user', function (Request $request) {
 // Cart routes
 Route::controller(CartController::class)->prefix('carts')->group(function () {
     Route::get('/', 'getCarts');
-})
+});
 
 // Category routes
 Route::controller(CategoryController::class)->prefix('categories')->group(function () {
